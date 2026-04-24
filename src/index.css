@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+	--font-display: "Sora", "Segoe UI", sans-serif;
+	--font-body: "Manrope", "Segoe UI", sans-serif;
+}
+
+@layer base {
+	body {
+		font-family: var(--font-body);
+		transition: background-color 180ms ease, color 180ms ease;
+	}
+}
+
+@layer components {
+	.glass-card {
+		@apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_24px_60px_rgba(7,14,35,0.45)] backdrop-blur-xl;
+	}
+
+	.section-label {
+		@apply text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/70;
+	}
+
+	.field-wrap {
+		@apply flex flex-col;
+	}
+
+	.field-label {
+		@apply mb-1.5 text-xs font-medium uppercase tracking-[0.12em] text-cyan-100/65;
+	}
+
+	.field-input {
+		@apply w-full rounded-xl border border-white/20 bg-slate-900/70 px-3.5 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-400 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/30;
+	}
+
+	.field-file {
+		@apply w-full rounded-xl border border-white/20 bg-slate-900/70 px-3 py-2 text-sm text-slate-100 file:mr-3 file:rounded-lg file:border-0 file:bg-cyan-300 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-slate-950 hover:file:bg-cyan-200;
+	}
+
+	.logo-preview {
+		@apply mt-2 h-14 w-full rounded-lg border border-white/20 bg-white object-contain p-1;
+	}
+
+	.cta-btn {
+		@apply w-full rounded-xl bg-gradient-to-r from-cyan-300 via-emerald-300 to-lime-300 px-4 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.01] hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-70;
+	}
+
+	.download-btn {
+		@apply rounded-lg bg-white/90 px-3 py-1.5 text-xs font-semibold text-slate-900 transition hover:bg-white;
+	}
+}
+
+.theme-light .glass-card {
+	@apply border-slate-200/90 bg-white/90 shadow-[0_20px_45px_rgba(15,23,42,0.1)];
+}
+
+.theme-light .section-label {
+	@apply text-slate-500;
+}
+
+.theme-light .field-label {
+	@apply text-slate-600;
+}
+
+.theme-light .field-input {
+	@apply border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-500/30;
+}
+
+.theme-light .field-file {
+	@apply border-slate-300 bg-white text-slate-800 file:bg-sky-500 file:text-white hover:file:bg-sky-600;
+}
+
+.theme-light .logo-preview {
+	@apply border-slate-200;
+}
+
+.theme-light .download-btn {
+	@apply bg-slate-900 text-white hover:bg-slate-700;
+}
